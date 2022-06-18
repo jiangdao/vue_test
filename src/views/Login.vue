@@ -1,5 +1,5 @@
 <template>
-  <el-row>
+  <el-row style=" height:100%">
     <el-row>
       <el-col :span="24"><h1>用户登录</h1></el-col>
     </el-row>
@@ -69,7 +69,7 @@ export default {
           this.$axios.post('/login',this.loginForm).then(result =>{
              const jwt=result.headers['authorization'];
              this.$store.commit('SET_TOKEN',jwt);
-             this.$router.push('/home')
+             this.$router.push('/index')
 
           })
         } else {
